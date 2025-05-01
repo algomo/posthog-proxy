@@ -9,10 +9,6 @@ http {
 
         server_name ph.newmode.ai;
 
-        add_header 'Access-Control-Allow-Origin' '*';
-        add_header 'Access-Control-Allow-Methods' 'GET, POST, OPTIONS';
-        add_header 'Access-Control-Allow-Headers' 'DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type';
-
         # Specify DNS resolver for variables, this is Google Public DNS
         # You should adjust this to a DNS resolver of your choice
         resolver 8.8.8.8 8.8.4.4 [2001:4860:4860::]:8888 [2001:4860:4860::]:8844 valid=300s;
@@ -42,5 +38,9 @@ http {
             proxy_pass $posthog_main$1$is_args$args;
             proxy_set_header Host "eu.i.posthog.com";
         }
+
+        add_header 'Access-Control-Allow-Origin' '*';
+        add_header 'Access-Control-Allow-Methods' 'GET, POST, OPTIONS';
+        add_header 'Access-Control-Allow-Headers' 'DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type';
     }
 }
