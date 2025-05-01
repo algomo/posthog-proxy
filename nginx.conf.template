@@ -9,7 +9,7 @@ http {
 
         server_name ph.newmode.ai;  # Accept requests for any domain
 
-        add_header 'Access-Control-Allow-Origin' 'https://dash.newmode.ai' always;
+        add_header 'Access-Control-Allow-Origin' '*' always;
 
         # Specify DNS resolver for variables, this is Google Public DNS
         # You should adjust this to a DNS resolver of your choice
