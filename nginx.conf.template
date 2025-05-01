@@ -7,7 +7,9 @@ http {
     server {
         listen 8080;  # Set the port to 8080
 
-        server_name _;  # Accept requests for any domain
+        server_name ph.newmode.ai;  # Accept requests for any domain
+
+        add_header 'Access-Control-Allow-Origin' 'dash.newmode.ai' always;
 
         # Specify DNS resolver for variables, this is Google Public DNS
         # You should adjust this to a DNS resolver of your choice
