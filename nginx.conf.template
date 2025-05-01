@@ -17,7 +17,7 @@ http {
         # Check Referer header
         # Change hogbook to your domain as needed to ensure requests only come from your domain
         set $valid_referer 0;
-        if ($http_referer ~* "^https?://(localhost|([a-zA-Z0-9-]+)\.hogbook\.com)") {
+        if ($http_referer ~* "^https?://(localhost|([a-zA-Z0-9-]+)\.newmode\.ai)") {
             set $valid_referer 1;
         }
 
@@ -38,9 +38,5 @@ http {
             proxy_pass $posthog_main$1$is_args$args;
             proxy_set_header Host "eu.i.posthog.com";
         }
-
-        add_header 'Access-Control-Allow-Origin' '*';
-        add_header 'Access-Control-Allow-Methods' 'GET, POST, OPTIONS';
-        add_header 'Access-Control-Allow-Headers' 'DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type';
     }
 }
