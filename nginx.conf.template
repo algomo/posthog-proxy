@@ -14,8 +14,6 @@ http {
         resolver 8.8.8.8 8.8.4.4 [2001:4860:4860::]:8888 [2001:4860:4860::]:8844 valid=300s;
         resolver_timeout 5s;  # Timeout for DNS resolution
 
-        add_header Access-Control-Allow-Origin *;
-
         # Check Referer header
         # Change hogbook to your domain as needed to ensure requests only come from your domain
         set $valid_referer 0;
