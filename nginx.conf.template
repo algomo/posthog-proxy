@@ -17,7 +17,7 @@ http {
         # Check Referer header
         # Change hogbook to your domain as needed to ensure requests only come from your domain
         set $valid_referer 0;
-        if ($http_referer ~* "^https?://(localhost|([a-zA-Z0-9-]+)\.newmode\.ai)") {
+        if ($http_referer ~* "^https?://(client-newmode-pr-[0-9]+\.up\.railway\.app|localhost|([a-zA-Z0-9-]+)\.newmode\.ai)") {
             set $valid_referer 1;
         }
 
